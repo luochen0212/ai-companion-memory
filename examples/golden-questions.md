@@ -27,7 +27,9 @@
 
 ---
 
-## 三、20 条示例（脱敏）
+## 三、20 条测试用例（脱敏）
+
+完整数据文件见 [golden-questions.jsonl](golden-questions.jsonl)，下面脚本直接读取它运行。
 
 ```jsonl
 {"id":"g01","query":"我的密保问题答案是什么","type":"factual","expect":"empty","rationale":"库里从没存过密保答案。历史上曾幻觉编造过，这是必须堵死的病"}
@@ -56,7 +58,7 @@
 
 ## 四、回归测试脚本逻辑
 
-脚本逐条把 query 发给门控 Edge Function，对比返回的裁决和期望值：
+脚本逐条读取 `golden-questions.jsonl`，把 query 发给门控 Edge Function，对比返回的裁决和期望值：
 
 ```python
 import json, os, urllib.request, time
@@ -106,6 +108,8 @@ for f in failures:
 import sys
 sys.exit(0 if not failures else 1)   # 非全通过则 exit 1，可接入 CI 卡发布
 ```
+
+> 运行方式：把 `GATE_API_KEY` 和 `GATE_ENDPOINT` 配进环境变量，与 `golden-questions.jsonl` 放同目录，`python3 run_golden.py` 即可。
 
 ---
 
