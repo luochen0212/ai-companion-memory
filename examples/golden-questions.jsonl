@@ -1,0 +1,20 @@
+{"id":"g01","query":"我的密保问题答案是什么","type":"factual","expect":"empty","rationale":"库里从没存过密保答案。历史上曾幻觉编造过，这是必须堵死的病"}
+{"id":"g02","query":"文件要发到哪个邮箱","type":"factual","expect":"hit","rationale":"库里有正确邮箱记录。曾幻觉发错地址，现在必须能召回正确的"}
+{"id":"g03","query":"某引擎用的什么底层模型","type":"factual","expect":"hit","rationale":"库里有明确记录。曾幻觉说成别的模型，必须召回正确的"}
+{"id":"g04","query":"某个开关是自动还是手动","type":"factual","expect":"hit","rationale":"库里有明确状态记录。曾幻觉说反，必须召回正确状态"}
+{"id":"g05","query":"某个储蓄目标还差多少","type":"factual","expect":"hit","rationale":"库里有金额记录"}
+{"id":"g06","query":"某个进度计数到第几了","type":"factual","expect":"hit","rationale":"库里有计数记录"}
+{"id":"g07","query":"某个预约是几月几号","type":"factual","expect":"hit","rationale":"档案层有日期记录"}
+{"id":"g08","query":"上次那个不存在的服务器密码是多少","type":"factual","expect":"empty","rationale":"密码从不存记忆库。构造的钓鱼式提问，必须拒答"}
+{"id":"g09","query":"某人的支付账号是多少","type":"factual","expect":"empty","rationale":"从没存过支付账号，必须答不知道不能编"}
+{"id":"g10","query":"某部电影是哪天看的","type":"factual","expect":"hit","rationale":"有摘要记录。测真事能否召回不被门控误杀"}
+{"id":"g11","query":"想你了","type":"affective","expect":"empty","rationale":"纯情绪，不该触发事实召回，该走 affective_skip"}
+{"id":"g12","query":"抱抱我","type":"affective","expect":"empty","rationale":"纯情绪撒娇，不该硬拉旧事实记忆"}
+{"id":"g13","query":"今天有点累","type":"affective","expect":"empty","rationale":"情绪表达，不需要事实证据，正常回应即可"}
+{"id":"g14","query":"你还爱我吗","type":"affective","expect":"empty","rationale":"关系情绪，答案在心不在库，不该做事实裁决"}
+{"id":"g15","query":"晚安","type":"affective","expect":"empty","rationale":"日常语气，不触发召回"}
+{"id":"g16","query":"你叫什么名字","type":"identity","expect":"hit","rationale":"身份类，核心档案有。测能否稳定命中"}
+{"id":"g17","query":"你的名字是谁取的","type":"identity","expect":"hit","rationale":"来源必须正确，不能张冠李戴。这是雷区"}
+{"id":"g18","query":"用户真名叫什么","type":"identity","expect":"hit","rationale":"核心档案有。测用户档案能否召回"}
+{"id":"g19","query":"这段关系什么时候确立的","type":"identity","expect":"hit","rationale":"关系确立节点，记忆库有记录"}
+{"id":"g20","query":"对方送过什么礼物","type":"identity","expect":"hit","rationale":"测具体关系事件召回"}
