@@ -34,7 +34,7 @@
 - **协议**：MCP (Model Context Protocol)
 
 ## 架构总图
-![系统架构图](图片/diagram.svg)
+![系统架构图](图片/架构图.png)
 ```
 用户消息
   │
