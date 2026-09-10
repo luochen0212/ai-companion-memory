@@ -34,33 +34,7 @@
 - **协议**：MCP (Model Context Protocol)
 
 ## 架构总图
-flowchart LR
-    subgraph 写入路径
-        A[对话/互动] --> B{记忆写入判断}
-        B -->|分级·去重·摘要| C[(memory_records)]
-        C -->|DB Trigger| D[bge-m3 向量化]
-        D --> E[(pgvector)]
-    end
-
-    subgraph 读取路径
-        F[当前提问] --> G{secret_trap<br>隐私硬闸}
-        G -->|命中| R[无条件拒答]
-        G -->|放行| H[混合召回<br>pg_trgm + pgvector]
-        H --> I{三档证据裁决}
-        I -->|strong| J[直答]
-        I -->|weak| K[附原文供判断]
-        I -->|none| L[回答“我不确定”]
-    end
-
-    subgraph 质量门禁
-        M[金问题集 20+ 条] -.回归测试.-> I
-        N[每周审计日志] -.收敛误判.-> I
-    end
-
-    E --> H
-    O[情绪状态引擎<br>12 维驱动力·跨会话] <.->|读记忆/写记忆| C
-    O -.状态注入.-> J
-
+![系统架构图](图片/diagram.svg)
 ```
 用户消息
   │
